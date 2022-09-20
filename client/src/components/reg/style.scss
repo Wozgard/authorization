@@ -1,0 +1,185 @@
+.auth {
+
+    // .auth__reg
+    &__reg {}
+}
+
+.reg-auth {
+    position: fixed;
+    // adaptiv value is my scss mixin, you can find it in '@/components/styles/mixins.scss' 
+    @include adaptiv-value('width', 540.5, 480, 1);
+    // adaptiv value is my scss mixin, you can find it in '@/components/styles/mixins.scss'
+    @include adaptiv-value('height', 690, 600, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    padding: 30px 10px;
+    border-radius: 10px;
+
+    // .reg-auth__title
+    &__title {
+        font-weight: 700;
+        @include adaptiv-value('font-size', 36, 34, 1);
+        color: $regRedColor;
+        margin-bottom: 30px;
+    }
+
+    //.reg-auth__sub-title
+    &__sub-title {
+        display: block;
+        margin-bottom: 25px;
+        font-weight: 600;
+        opacity: 0.6;
+    }
+
+    // .reg-auth__social-links
+    &__social-links {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+    }
+
+    // .reg-auth__link
+    &__link {
+        display: block;
+        border-radius: 50%;
+        border: 1px solid #000;
+
+        & img {
+            width: 25px;
+            height: 25px;
+        }
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        &:nth-child(1),
+        &:nth-child(4) {
+            padding: 8.5px;
+        }
+
+        &:nth-child(2) {
+            padding: 7px;
+
+            & img {
+                margin-top: 3px;
+                height: 25px;
+                width: 28px;
+            }
+        }
+
+        &:nth-child(3) {
+            padding: 10px;
+
+            & img {
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+
+    // .reg-auth__body
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    // .reg-auth__input
+    &__input {
+        width: 70%;
+        padding: 1.3rem;
+        border: 2px solid #c8d3d6;
+        border-radius: 10px;
+        background: #f6f8fa;
+        @include adaptiv-value('height', 50, 30, 1);
+        @include adaptiv-value('margin-bottom', 30, 10, 1);
+
+        &[type="password"] {
+            padding-right: 50px;
+        }
+    }
+
+    &__input::placeholder {
+        color: #c8d3d6;
+    }
+
+    // .reg-auth__pass
+    &__pass {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+    }
+
+    //.reg-auth__passHidden
+    &__passHidden {
+        cursor: pointer;
+        opacity: 0.4;
+        width: 50px;
+        height: 30px;
+        @include adaptiv-value('width', 25, 25, 1);
+        @include adaptiv-value('height', 25, 18, 1);
+        z-index: 2;
+        position: absolute;
+        top: 15%;
+        right: 18%;
+        transition: background 0.3s ease-in-out 0s;
+        background: url('@/assets/eye.svg') 0 0/100% 100% no-repeat;
+
+        &::before {
+            content: '';
+            opacity: 0;
+            visibility: hidden;
+            background: url('@/assets/hidden.svg') 0 0/100% 100% no-repeat;
+        }
+
+        &._show {
+            background: url('@/assets/hidden.svg') 0 0/100% 100% no-repeat;
+        }
+    }
+
+    // .reg-auth__buttons-box
+    &__buttons-box {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    // .reg-auth__button
+    &__button {
+        width: 48%;
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: 600;
+        border-radius: 10px;
+        background-color: $regRedColor;
+        @include adaptiv-value('height', 60, 60, 1);
+    }
+
+    &__button._singin {
+        border: 2px solid $regRedColor;
+        color: $regRedColor;
+        background-color: #fff;
+    }
+}
+
+//status styles
+._uncorrect {
+    border: 3px solid #be3232;
+}
+
+._done {
+    cursor: default;
+    opacity: 0.7;
+}
