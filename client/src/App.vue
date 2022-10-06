@@ -1,5 +1,5 @@
 <template>
-    <formAuth v-bind:user="user" v-bind:server="server" v-bind:defaultHeders="defaultHeders" />
+    <formAuth v-bind:user="user" v-bind:server="server" v-bind:defaultHeders="defaultHeders" v-bind:regSubTitle="regSubTitle" />
 </template>
 
 <script>
@@ -19,6 +19,13 @@ export default {
             },
             server: [
                 '/user/create'
+            ],
+            regSubTitle: [
+                'or use your email for registration',
+                'your name is too short',
+                'mail must consist of a body, an @ sign and a dot',
+                'passwords must be at least 6 characters, including a number, an uppercase letter, a lowercase letter and special characters',
+
             ]
         }
     },

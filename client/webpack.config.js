@@ -44,10 +44,7 @@ module.exports = {
                 test: /\.scss$/,
                 use: ['style-loader', 'vue-style-loader', 'css-loader', 'sass-loader']
             },
-            {
-                test: /\.{png|jpg|jpeg|svg|ico|gif}/,
-                loader: 'file-loader'
-            }
+            { test: /\.(png|jpe?g|gif|svg|webp|ico)$/i, type: 'asset/inline' }
         ]
     }
 }
